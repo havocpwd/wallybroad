@@ -1,0 +1,15 @@
+RewriteEngine On
+RewriteBase /walix
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+<Files server.js>
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
